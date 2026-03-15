@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pqLAB — Amostras de Cor do Ícone</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      padding: 40px;
+      color: #1e293b;
+    }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    p.sub { font-size: 13px; color: #64748b; margin-bottom: 36px; }
+
+    .section { margin-bottom: 40px; }
+    .section h2 { font-size: 14px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: #475569; margin-bottom: 16px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .swatch {
+      background: white;
+      border-radius: 14px;
+      padding: 16px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      border: 2px solid transparent;
+      transition: border-color .15s;
+      cursor: default;
+    }
+    .swatch:hover { border-color: #cbd5e1; }
+
+    .icon-wrap {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .icon-wrap svg { width: 28px; height: 28px; color: white; }
+
+    .num {
+      font-size: 10px; font-weight: 700;
+      background: #f1f5f9; color: #64748b;
+      border-radius: 20px; padding: 2px 8px;
+    }
+    .name { font-size: 11px; font-weight: 600; color: #334155; text-align: center; }
+    .hex  { font-size: 10px; color: #94a3b8; font-family: monospace; }
+
+    /* ─── GREENS ─── */
+    .g1  { background-color: #4ade80; }
+    .g2  { background-color: #22c55e; }
+    .g3  { background-color: #16a34a; }
+    .g4  { background-color: #15803d; }
+    .g5  { background-color: #166534; }
+    .g6  { background-color: #34d399; }
+    .g7  { background-color: #10b981; }
+    .g8  { background-color: #059669; }
+    .g9  { background-color: #047857; }
+    .g10 { background-color: #0d9488; }
+
+    /* ─── ORANGES ─── */
+    .o1  { background-color: #fbbf24; }
+    .o2  { background-color: #f59e0b; }
+    .o3  { background-color: #d97706; }
+    .o4  { background-color: #b45309; }
+    .o5  { background-color: #92400e; }
+    .o6  { background-color: #fdba74; }
+    .o7  { background-color: #fb923c; }
+    .o8  { background-color: #f97316; }
+    .o9  { background-color: #ea580c; }
+    .o10 { background-color: #c2410c; }
+
+    .current-badge {
+      font-size: 9px; font-weight: 700;
+      background: #dcfce7; color: #15803d;
+      border-radius: 20px; padding: 2px 7px;
+      letter-spacing: .04em;
+    }
+  </style>
+</head>
+<body>
+
+<h1>pqLAB · Amostras de Cor do Ícone</h1>
+<p class="sub">Cada swatch mostra o GraduationCap exatamente como aparecerá no ícone da sidebar e da tela de login.</p>
+
+<!-- SVG sprite reutilizável -->
+<svg style="display:none">
+  <symbol id="grad-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+  </symbol>
+</svg>
+
+<!-- ════ VERDES ════ -->
+<div class="section">
+  <h2>🟢 Verdes</h2>
+  <div class="grid">
+
+    <div class="swatch">
+      <div class="icon-wrap g1"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 1</span>
+      <span class="name">green-400</span>
+      <span class="hex">#4ade80</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g2"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 2</span>
+      <span class="name">green-500</span>
+      <span class="hex">#22c55e</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g3"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 3</span>
+      <span class="name">green-600</span>
+      <span class="hex">#16a34a</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g4"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 4</span>
+      <span class="name">green-700</span>
+      <span class="hex">#15803d</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g5"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 5</span>
+      <span class="name">green-800</span>
+      <span class="hex">#166534</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g6"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 6</span>
+      <span class="name">emerald-400</span>
+      <span class="hex">#34d399</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g7"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 7</span>
+      <span class="name">emerald-500</span>
+      <span class="hex">#10b981</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g8"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 8 ⭐</span>
+      <span class="name">emerald-600</span>
+      <span class="hex">#059669</span>
+      <span class="current-badge">ATUAL</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g9"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 9</span>
+      <span class="name">emerald-700</span>
+      <span class="hex">#047857</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap g10"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Verde 10</span>
+      <span class="name">teal-600</span>
+      <span class="hex">#0d9488</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════ LARANJAS ════ -->
+<div class="section">
+  <h2>🟠 Laranjas</h2>
+  <div class="grid">
+
+    <div class="swatch">
+      <div class="icon-wrap o1"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 1</span>
+      <span class="name">amber-400</span>
+      <span class="hex">#fbbf24</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o2"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 2</span>
+      <span class="name">amber-500</span>
+      <span class="hex">#f59e0b</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o3"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 3</span>
+      <span class="name">amber-600</span>
+      <span class="hex">#d97706</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o4"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 4</span>
+      <span class="name">amber-700</span>
+      <span class="hex">#b45309</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o5"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 5</span>
+      <span class="name">amber-800</span>
+      <span class="hex">#92400e</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o6"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 6</span>
+      <span class="name">orange-300</span>
+      <span class="hex">#fdba74</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o7"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 7</span>
+      <span class="name">orange-400</span>
+      <span class="hex">#fb923c</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o8"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 8</span>
+      <span class="name">orange-500</span>
+      <span class="hex">#f97316</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o9"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 9</span>
+      <span class="name">orange-600</span>
+      <span class="hex">#ea580c</span>
+    </div>
+
+    <div class="swatch">
+      <div class="icon-wrap o10"><svg><use href="#grad-cap"/></svg></div>
+      <span class="num">Laranja 10</span>
+      <span class="name">orange-700</span>
+      <span class="hex">#c2410c</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
