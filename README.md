@@ -15,14 +15,14 @@ Toda a persistência de dados ocorre diretamente no repositório GitHub do usuá
 > Toda a configuração é feita pelo navegador e pela interface do GitHub.
 > Nenhum terminal, nenhum build local — o GitHub cuida de tudo automaticamente.
 
-![SucupiraLAB](./screenshots/07-producao.jpg)
+![pqLAB](./screenshots/01-diario-exp.png)
 
 ---
 
 ## Passo 1 — Fork do repositório no GitHub
 
 1. Acesse [github.com](https://github.com) com sua conta
-2. Vá ao repositório do SucupiraLAB e clique em **Fork** (ou suba os arquivos em um repositório novo)
+2. Vá ao repositório do pqLAB e clique em **Fork** (ou suba os arquivos em um repositório novo)
 3. O repositório pode ser **público ou privado**
 
 ---
@@ -37,7 +37,7 @@ Toda a persistência de dados ocorre diretamente no repositório GitHub do usuá
 
 ## Passo 3 — Criar um repositório de dados no GitHub
 
-1. Crie um segundo repositório **privado** (ex: `meus-dados-sucupira`) — é onde os seus dados YAML serão salvos
+1. Crie um segundo repositório **privado** (ex: `meus-dados-pq`) — é onde os seus dados YAML serão salvos
 2. Não precisa de nenhum arquivo dentro, pode ficar vazio
 
 ---
@@ -87,8 +87,8 @@ Se quiser o botão "Entrar com Google", edite o arquivo `public/config.json` dir
 
 2. Preencha:
 
-Application name: SucupiraLAB (ou outro nome)
-Homepage URL: URL do seu app (ex: https://sucupiralab.ombudsmanviktor.me)
+Application name: pqLAB (ou outro nome)
+Homepage URL: URL do seu app (ex: https://pqlab.ombudsmanviktor.me)
 Authorization callback URL: pode deixar a mesma URL do Homepage — não é usada no Device Flow
 
 3. Clique em Register application
@@ -143,13 +143,13 @@ O primeiro deploy demora ~2 minutos. Você pode acompanhar em:
 4. Preencha:
    - **PAT**: o token gerado no Passo 4
    - **Usuário/Org**: seu usuário GitHub
-   - **Repositório**: `meus-dados-sucupira` (criado no Passo 3)
+   - **Repositório**: `meus-dados-pq` (criado no Passo 3)
 5. Clique **Conectar e entrar** — pronto! ✅
 
 > Os dados são salvos como arquivos YAML no seu repositório privado.
 > Cada usuário que logar com uma conta Google diferente terá acesso apenas aos seus próprios dados.
 
-![SucupiraLAB](./screenshots/01-login.png)
+![pqLAB](./screenshots/00-login.png)
 
 ---
 
@@ -223,16 +223,37 @@ Acompanhe e visualize as associações construídas a partir de [[links internos
 ## Estrutura de dados criada automaticamente
 
 ```
-meus-dados-sucupira/
+meus-dados-pq/
+│
 ├── data/
-│   ├── prestacoes/       ← Prestações de Contas (.yaml por entrada)
-│   ├── discursos/        ← Discursos Qualificados
-│   ├── projetos/         ← Projetos Financiados
-│   ├── orientacoes/      ← Orientações (inclui tarefas, reuniões, leituras)
-│   ├── producao/         ← Produção Científica
-│   └── submissoes/       ← Submissões (inclui eventos do kanban)
-└── attachments/          ← Anexos enviados via app (base64)
+│   ├── diario/
+│   │   ├── {uuid}.yaml        ← uma entrada por arquivo
+│   │   └── {uuid}.yaml
+│   │
+│   ├── bookmarks/
+│   │   └── {uuid}.yaml
+│   │
+│   ├── rssfeeds/
+│   │   └── {uuid}.yaml
+│   │
+│   ├── fichamentos/
+│   │   └── {uuid}.yaml
+│   │
+│   ├── planos/
+│   │   └── {uuid}.yaml
+│   │
+│   ├── listas/                ← Tarefas (com checkbox)
+│   │   └── {uuid}.yaml
+│   │
+│   └── listassimples/         ← Listas e Memorandos (sem checkbox)
+│       └── {uuid}.yaml
+│
+└── attachments/
+    ├── diario/{id}/{arquivo}   ← PDFs, imagens etc. por módulo
+    ├── bookmarks/{id}/{arquivo}
+    └── fichamentos/{id}/{arquivo}
 ```
+
 
 ---
 
@@ -247,4 +268,4 @@ meus-dados-sucupira/
 
 ---
 
-*SucupiraLAB — Gestão acadêmica · um projeto desenvolvido por [coLAB/UFF](https://colab-uff.github.io/)*
+*pqLAB — Gestão de rotinas de pesquisa · um projeto desenvolvido por [coLAB/UFF](https://colab-uff.github.io/)*
